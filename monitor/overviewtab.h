@@ -14,6 +14,8 @@ class OverviewTab : public QWidget {
     void initGui();
 
    signals:
+   public slots:
+    void updateinfo(char *buf);
 };
 
 #endif  // OVERVIEWTAB_H

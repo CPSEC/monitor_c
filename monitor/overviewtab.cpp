@@ -2,6 +2,7 @@
 
 #include <QGridLayout>
 #include <QPushButton>
+#include <QtDebug>
 OverviewTab::OverviewTab(QWidget *parent) : QWidget(parent) {
     //
     initGui();
@@ -26,4 +27,15 @@ void OverviewTab::initGui() {
     QGridLayout *layout = new QGridLayout(this);
     layout->addWidget(table);
     this->setLayout(layout);
+}
+
+// slot to update info
+void OverviewTab::updateinfo(char *buf) {
+    if (table->itemAt(0, 0) == nullptr) qDebug() << "fuck" << endl;
+    this->table->itemAt(0, 0)->setText("buf");
+    this->table->itemAt(1, 1)->setText("buf");
+    this->table->itemAt(2, 2)->setText("buf");
+    this->table->viewport()->update();
+    qDebug() << table->itemAt(0, 0)->text() << endl;
+    qDebug() << buf << endl;
 }

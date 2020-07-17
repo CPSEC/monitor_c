@@ -9,6 +9,10 @@ class MainWindow;
 }
 QT_END_NAMESPACE
 
+class QTabWidget;
+class OverviewTab;
+class Server;
+
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
@@ -18,6 +22,12 @@ class MainWindow : public QMainWindow {
 
    private:
     Ui::MainWindow *ui;
+
+    QTabWidget *tabs;
+    OverviewTab *overviewtab;
+    Server *serv;
     void initGui();
+    void initThread();
+    void initSignalSlot();
 };
 #endif  // MAINWINDOW_H

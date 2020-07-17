@@ -26,6 +26,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
+include_directories(rapidjson)
+
 if(ANDROID)
   add_library(monitor SHARED
     main.cpp

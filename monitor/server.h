@@ -8,7 +8,13 @@ class Server : public QObject {
    public:
     Server();
     void receiveloop();
+    void readJson(int &fd);
+
     void sendsetting();
+    void writeJson(int &fd);
+
+   signals:
+    void update(char *buf);
 };
 
 #endif  // SERVER_H
