@@ -43,5 +43,6 @@ void MainWindow::initThread() {
 }
 
 void MainWindow::initSignalSlot() {
-    connect(serv, &Server::update, overviewtab, &OverviewTab::updateinfo);
+    connect(this->serv, &Server::update, this->overviewtab,
+            &OverviewTab::updateinfo);
 }

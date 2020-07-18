@@ -2,14 +2,19 @@
 #define OVERVIEWTAB_H
 
 #include <QObject>
-#include <QTableWidget>
 #include <QWidget>
+
+class QTableView;
+class QStandardItemModel;
+class QPushButton;
 
 class OverviewTab : public QWidget {
     Q_OBJECT
    public:
     explicit OverviewTab(QWidget *parent = nullptr);
-    QTableWidget *table;
+    QTableView *table;
+    QStandardItemModel *model;
+    QPushButton *bt;
 
     void initGui();
 
